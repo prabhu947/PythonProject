@@ -1,0 +1,27 @@
+<!-- ng-app
+ng-model
+ng-init
+ng-bind
+ng-repeat -->
+
+<html ng-app="myapp" ng-controller="arrcntrl"></html>
+  <head>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body>
+    <p ng-init="arr=[2,5,3,6,4,1]"></p>
+    <ul>
+        <li ng-repeat="x in arr | filter:evenNumber">
+            {{x}}
+        </li>
+    </ul>
+    <script>
+        angular.module("myapp",[]).controller("arrcntrl",function($scope){
+            $scope.evenNumber=function(x)
+            {
+                return x % 2 === 0;
+            }
+        })
+    </script>
+  </body>
+</html>

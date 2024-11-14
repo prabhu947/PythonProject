@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <p ng-init="arr=['soppu', 'omnu', 'shanu', 'ibm', 'tesla', 'karkera']"></p>
+    <ul>
+        <li ng-repeat="x in arr | orderBy:x:true">
+            {{x}}
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body>
+    <p ng-init="arr=[10, 12, 13, 15, 16,8,2,4]"></p>
+    <h4>Looping with ng-repeat</h4>
+    <ul>
+      <li ng-repeat="x in arr | orderBy:x:true">
+        {{ x }}
+      </li>
+    </ul>
+  </body>
+</html>
