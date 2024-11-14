@@ -11,3 +11,39 @@
     </div>
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="en" ng-app="calculatorApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js" integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    
+    <div ng-controller="CalculatorController">
+        <input type="text" ng-model="num1" placeholder="value 1"> <br>
+        <input type="text" ng-model="num2" placeholder="value 2"> <br>
+        <button ng-click="add()">Add</button>
+        <button ng-click="subtract()">Subtract</button>
+        <button ng-click="multiply()">Multiply</button>
+        <button ng-click="divide()">Divide</button> <br>
+        <input type="text" value="{{result}}">
+    </div>
+
+    <script>
+        // angular.module('ng-app name', []).controller('ng-controller name', funciton($scope)){}
+        angular.module('calculatorApp', []).controller('CalculatorController', function($scope){
+            $scope.result = 0;
+
+            $scope.add = () => {$scope.result = parseFloat($scope.num1) + parseFloat($scope.num2);};
+
+            $scope.subtract = () => {$scope.result = parseFloat($scope.num1) - parseFloat($scope.num2);};
+
+            $scope.multiply = () => {$scope.result = parseFloat($scope.num1) * parseFloat($scope.num2);};
+
+            $scope.divide = () => {$scope.result = parseFloat($scope.num1) / parseFloat($scope.num2);};
+        });
+    </script>
+</body>
+</html>
